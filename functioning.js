@@ -86,3 +86,15 @@ const functionName3 = (paramOne, paramTwo) => {}
 const sumNumbers = number => number+number
 //without {}, whatever that line evaluates will be automaticlly returned
 //this is called an implicit return
+
+//blocks in javascript are anything between {}
+//this can affect variable scope
+//variables declared outside a block have global scope
+//variables declared inside a block have block scope (local variables)
+
+//trying to access a variable globally when it only has block scope results
+//in a 'ReferenceError'
+
+//too many global variables is called 'Scope Pollution'
+//we want to avoid this because those variables will remain there until the program finishes
+//making our global namespace fill up quickly
