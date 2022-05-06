@@ -14,7 +14,7 @@ console.log('      woah      '.trim()) //trim removes whitespace before and afte
 
 //JS has Math object
 
-console.log(Math.random()*100)//makes a random number (double) between 1 and 100
+console.log(Math.random()*100)//makes a random number (double) between 0 and 99
 console.log(Math.floor(Math.random()*100)) //applies floor function to the random double
 //ceiling function for JS is Math.ceil(x)
 
@@ -62,6 +62,8 @@ console.log(myName)
 
 //interpolation is like printf where you can insert variables in a string
 //example:
+
+//${variable}
 
 const myPet = 'armadillo'
 console.log(`I own a pet ${myPet}`)
