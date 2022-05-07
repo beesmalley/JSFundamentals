@@ -14,6 +14,6 @@ let person ={
     },
     chooseJob(response){
         person.occupation = response
-    }
+    },
 }
 
