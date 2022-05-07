@@ -8,6 +8,21 @@ const goat = {
       console.log(this.dietType); //if you were to just write 'dietType' this prints undefined, so we use 'this' to be specific
     }
   };
+
+  /* heres the same thing in java for reference
+  
+  class goat{
+      String dietType = "herbivore";
+
+      public static void makeSound(){
+          System.out.println("baa");
+      }
+
+      public static void diet(){
+          System.out.println(this.dietType);
+      }
+  }
+  */
    
   goat.diet(); 
   // Output: herbivore
@@ -62,4 +77,5 @@ const person = {
   //also notice that we need to use the keyword 'get' for our getters
 
   //what about setters?
-  
+  //they are written in a similar way
+
