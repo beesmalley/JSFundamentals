@@ -10,7 +10,7 @@ const goat = {
   };
 
   /* heres the same thing in java for reference
-  
+
   class goat{
       String dietType = "herbivore";
 
@@ -77,5 +77,109 @@ const person = {
   //also notice that we need to use the keyword 'get' for our getters
 
   //what about setters?
-  //they are written in a similar way
+  //they are written the same way
+  const robot = {
+    _model: '1E78V2',
+    _energyLevel: 100,
+    _numOfSensors: 15,
+    get numOfSensors(){ //getter method
+      if(typeof this._numOfSensors === 'number'){
+        return this._numOfSensors;
+      } else {
+        return 'Sensors are currently down.'
+      }
+    },
+    set numOfSensors(num){ //setter method (notice the 'set' keyword)
+      if(typeof num === 'number' && num>=0){
+        this._numOfSensors =num
+      }else{
+        console.log('Pass in a number that is greater than or equal to 0')
+      }
+    }
+  };
+  
+  robot.numOfSensors = 100 //notice how we access this method without () just like we did for getters
+  
+  console.log(robot.numOfSensors)
+
+  //factory functions help us make many instances of the same kind of object
+
+  //example of a factory function:
+//this factory function will help us make many monsters. lets make one now!
+  const monsterFactory = (name, age, energySource, catchPhrase) => {
+      //notice how this function returns an object literal
+    return { 
+      name: name,
+      age: age, 
+      energySource: energySource,
+      scare() {
+        console.log(catchPhrase);
+      } 
+    }
+  };
+  //we're going to make a ghost
+  const ghost = monsterFactory('Ghouly', 251, 'ectoplasm', 'BOO!');
+  //now we made a ghost object using the monsterFactory function to churn out this new object
+ghost.scare(); // 'BOO!'
+
+//ES6 introduced new shortcuts for assigning properties to variables known as destructuring
+//heres a truncated version of the factory function we made earlier
+const monsterFactoryShortened = (name, age) => {
+    return { 
+      name: name,
+      age: age
+    }
+  };
+  //using what's called 'property value shorthand' we can save ourself some keystrokes
+  const monsterFactoryShorthand = (name, age) => {
+    return { 
+      name,
+      age 
+    }
+  };
+  //this is great for when the property key and value have the same name
+  //now we dont have to repeat ourselves for property assignments
+
+  //theres also something called destructured assignment
+  //take a look at this object
+  const vampire = {
+    name: 'Dracula',
+    residence: 'Transylvania',
+    preferences: {
+      day: 'stay inside',
+      night: 'satisfy appetite'
+    }
+  };
+
+  //up to now, if we wanted to extract the residence property as a variable, we'd do this:
+//   const residence = vampire.residence; 
+// console.log(residence); // Prints 'Transylvania' 
+
+//but we can take advantage of destructured assignment to write it like this:
+const { residence } = vampire; 
+console.log(residence); // Prints 'Transylvania'
+
+//we can also use destructured assignment to grab nested properties
+const { day } = vampire.preferences; 
+console.log(day); // Prints 'stay inside'
+
+//another example:
+const robots = {
+    model: '1E78V2',
+    energyLevel: 100,
+    functionality: {
+      beep() {
+        console.log('Beep Boop');
+      },
+      fireLaser() {
+        console.log('Pew Pew');
+      },
+    }
+  };
+  
+  const { functionality } = robot //heres the destructured assignment of the functionality property of the robot
+  //since this refers to robot.functionality, we can call methods right off it
+  //like this
+  functionality.beep()//prints Beep Boop
+  
 
