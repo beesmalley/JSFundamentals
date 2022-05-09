@@ -182,4 +182,27 @@ const robots = {
   //like this
   functionality.beep()//prints Beep Boop
   
+//theres also many built-in object methods you should try
+//you can always check MDN's documentation for information about built in methods, objects, and syntax
 
+//some good ones to know are
+//Object.keys(obj) which returns an array of all the keys of a given object
+
+//Object.entries(obj) which returns an array of arrays containing all keys:value pairs
+
+//Object.assign(target, source) allow you to add more properties to an object.
+//target being the original object and source being what is to be added
+//example:
+//heres the original robot object. we wanna add 2 new properties
+const robotExample = {
+	model: 'SAL-1000',
+  mobile: true,
+  sentient: false,
+  armor: 'Steel-plated',
+  energyLevel: 75
+};
+//here we make the new robot using Object.assign 
+const newRobot = Object.assign(robot,{
+    laserBlaster:true, voiceRecognition: true})
+  //and we print all the properties
+  console.log(newRobot);
