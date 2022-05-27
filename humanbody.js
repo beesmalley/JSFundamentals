@@ -17,3 +17,5 @@ let person ={
     },
 }
 
+person.setName('Gorge')
+

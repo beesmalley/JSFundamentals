@@ -11,6 +11,7 @@
  
 //heres an example of a class that describes a Dog object
 class Dog {
+  
     constructor(name) {
       this._name = name;
       this._behavior = 0;
