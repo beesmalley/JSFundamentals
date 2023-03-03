@@ -20,6 +20,6 @@ const executorFunction = (resolve, reject) => {
   //otherwise, reject()
   const myFirstPromise = new Promise(executorFunction);
 
-  console.log(myFirstPromise)
+  console.log(myFirstPromise);
 
   

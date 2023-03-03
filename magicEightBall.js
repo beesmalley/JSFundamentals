@@ -1,10 +1,10 @@
-let username = ''
+let username = 'Bee'
 
 username ? console.log(`Hello, ${username}!`):console.log('Hello!')
 
 let userQuestion = 'What is my future?'
 
-console.log(`${username}\'s question is: ${userQuestion}`)
+username ? console.log(`${username}\'s question is: ${userQuestion}`):console.log(`The question is: ${userQuestion}`)
 
 let randomNumber = Math.floor(Math.random()*8)
 
